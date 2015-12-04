@@ -1,0 +1,11 @@
+Django==1.7.1
+Pillow==2.6.1
+South==1.0.1
+argparse==1.2.1
+django-model-utils==2.2
+django-photologue==3.1.1
+django-sortedm2m==0.8.1
+django-taggit==0.12.2
+factory-boy==2.4.1
+pytz==2014.9
+wsgiref==0.1.2

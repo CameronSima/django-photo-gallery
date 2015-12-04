@@ -1,0 +1,150 @@
+
+
+
+body {
+	width: 100%;;
+	margin: 0 auto;
+	font-family: Helvetica, Arial, sans-serif;
+	background: #fff8f7;
+
+}
+
+h1 {
+	font-weight: 200;
+}
+
+div#container {
+	width: 969px;
+	margin: auto;
+	background: white;
+}
+
+div#header {
+	width: 100%;
+	margin: auto;
+}
+
+div#title {
+	width:100%;
+	margin:auto;
+	background
+
+}
+
+
+nav {
+	width: 100%;
+	margin: 20px 0;
+	background: #513f3e;
+	
+
+
+}
+
+nav ul {
+	list-style: none;
+	overflow: hidden;
+	padding-left:11%;
+
+}
+
+nav ul li {
+
+	width: 80px;
+	float: left;
+
+
+}
+
+nav ul li a {
+
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	text-align: center;
+	color: #fffaf6;
+	padding: 8px 0;
+	background: #513f3e;
+	
+
+
+}
+
+nav ul li a:hover {
+ 
+	background: #292929; 
+
+}
+
+.cover_pic {
+	width: 200px;
+	height: 250px;
+
+
+}
+
+ul.albums {
+	padding: 0;
+
+}
+
+ul.albums li {
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+
+
+
+}
+
+ul.albums li a {
+	align: left;
+}
+
+ul.albums li p {
+	margin: 0px;
+	display: inline-block;
+
+}
+
+
+
+ul.albums div {
+	display: inline;
+}
+
+ul.albums li h4 {
+	font-weight: bold;
+	font-size: 1.1em;
+	margin: 5px;
+	text-decoration: none;
+}
+
+div.photo_detail p {
+	line-height: 1.35;
+}
+
+div.photo_detail a img{
+	margin-bottom: 10px;
+}
+
+div.registration_form  {
+	width: 350px;
+	padding-top: 30px;
+}
+
+div.registration_form li {
+	margin: 20px;
+	list-style-type: none;
+}
+
+div.registration_form li p {
+	display: inline;
+
+}
+
+div.registration_form li input {
+	float: right;
+
+}

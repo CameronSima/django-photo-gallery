@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="container">
+
+{% if user.is_authenticated %}
+
+	Welcome back, {{ user.username }}!
+<br>
+<br>
+	Date joined: {{ user.date_joined }}
+<br>
+	Last login: {{ user.last_login }}
+
+{% else %}
+
+	Welcome, new user. Please login to continue.
+
+{% endif %}
+
+
+</div>
+
+
+{% endblock %}

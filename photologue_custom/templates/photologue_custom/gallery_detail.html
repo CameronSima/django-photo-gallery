@@ -1,0 +1,56 @@
+{% extends "photologue/root.html" %}
+{% load i18n %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+{% block content %}
+
+<div id="container">
+
+	<div class="photo_detail">
+        <h1 class="page-header">{{ gallery.title }}</h1>
+        <p class="muted"><small><strong>{{ gallery.photo_count }} photos </strong>{% trans "published" %} {{ gallery.date_added }}</small></p>        
+        <p>{% if gallery.description %}{{ gallery.description|safe }}{% endif %}</p>
+
+		{% if user.is_authenticated %}
+	    {% for photo in gallery.public %}
+	        <a href="{{ photo.get_absolute_url }}">
+	             <img src="{{ photo.get_display_url }}" class="thumbnail" alt="{{ photo.title }}">
+	        </a>
+		{% endfor %}
+		{% else %}
+
+{% for photo in gallery.public|slice:":3" %}
+	        <a href="{{ photo.get_absolute_url }}">
+	             <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+		{% endfor %}
+	    {% endif %}
+
+		<h1>
+		 <a href="{% url 'login' %}">Login</a> or
+		 <a href="{% url 'registration_register' %}">Sign up</a>
+		 to see the full gallery!
+		</h1>
+
+        <div><a href="{% url 'photologue:gallery-list' %}" class="btn btn-default">{% trans "View all galleries" %}</a></div>
+	</div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'simaburgos'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+    {% endblock %}

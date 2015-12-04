@@ -1,0 +1,53 @@
+{% extends "photologue/root.html" %}
+{% load i18n %}
+
+{% block content %}
+
+{% if object_list %}
+
+<div id='title'>
+<h1>Galleries</h1>
+</div>
+<div id = "container">
+
+
+
+<ul class="albums">
+	{% for gallery in object_list %}
+
+		
+			<li>
+				<a href="{{ gallery.get_absolute_url }}">
+					{% for photo in gallery.sample %}
+                         <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+            
+                {% endfor %}
+					
+					<h4>{{ gallery.title }}</h4>
+			
+				</a>
+			
+					<p><strong>{{ gallery.photo_count }} photos</strong></p>
+			
+					<p>added {{ gallery.date_added }}</p>
+					
+			</li>
+		
+
+
+	{% endfor %}
+
+	</ul>
+</div>
+
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+					
+ 
+

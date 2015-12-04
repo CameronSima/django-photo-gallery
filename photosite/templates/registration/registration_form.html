@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+
+<div id="container">
+
+ <h1>1. Create an account</h1>
+
+{% if form.username.errors %}
+    <ol>
+    {% for error in form.username.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
+
+{% if form.password.errors %}
+    <ol>
+    {% for error in form.password.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
+
+{% if form.email.errors %}
+    <ol>
+    {% for error in form.email.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
+
+{% if form.non_field_errors %}
+    <ol>
+    {% for error in form.non_field_errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
+
+
+  <form action="" method="post">
+  {% csrf_token %}
+      <!--{{ form.as_p }}
+      <input type="submit" value="Create the account">-->
+   
+
+<div class="registration_form">
+	<li>
+		<p>username:</p>
+		<p>{{ form.username }}</p>
+	</li>
+	<li>
+		<p>email: {{ form.email }}</p>
+	</li>
+	<li>
+		<p>password: {{ form.password1 }}</p>
+	</li>
+	<li>
+		<p>password (again): {{ form.password2 }}</p>
+	</li>
+	<li>
+		<input type="submit" value="Register">
+</div>
+</form>
+
+</div>
+
+{% endblock %}

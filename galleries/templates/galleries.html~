@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="container">
+
+<h1>All galleries</h1>
+
+{% if object_list %}
+
+
+<ul class="albums">
+	{% for gallery in object_list %}
+
+		
+			<li>
+				<a href="{% url 'galleries:gallery' gallery.galleryextended.gallery_slug %}">
+					{% for photo in gallery.sample %}
+                         <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+            
+                {% endfor %}
+					
+					<h4>{{ gallery.galleryextended.gallery_name }}</h4>
+			
+				</a>
+			
+					<p><strong>{{ gallery.photo_count }} photos</strong></p>
+			
+					<p>added {{ gallery.date_added }}</p>
+					
+			</li>
+		
+
+
+	{% endfor %}
+
+	</ul>
+</div>
+
+{% endif %}
+
+{% endblock %}}
